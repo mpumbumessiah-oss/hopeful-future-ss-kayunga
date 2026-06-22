@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eLibrary Portal | Hopeful Future Secondary School - Digital Library</title>
+    <!-- Tailwind CSS + Google Fonts + Unicons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="icon" type="../image/jpeg" href="../images/logo.jpeg">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Custom dropdown styles */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu {
+            display: none;
+        }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-up {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        /* Card hover effect */
+        .resource-card {
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-indigo-50/20 text-gray-800 overflow-x-hidden">
+
+<!-- Topbar -->
+<div class="bg-[#0f172a] text-gray-200 text-sm py-2.5">
+    <div class="container mx-auto px-5 flex flex-wrap justify-between items-center gap-3 max-w-7xl">
+        <div class="flex flex-wrap items-center gap-5">
+            <a href="tel:+256775831844" class="flex items-center gap-2 hover:text-amber-400 transition"><i class="uil uil-phone"></i> +256-775-831844</a>
+            <a href="mailto:info@hopefulfuturess.com" class="flex items-center gap-2 hover:text-amber-400 transition"><i class="uil uil-envelope"></i> info@hopefulfuturess.com</a>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="text-xs">Follow us</span>
+            <a href="https://www.tiktok.com/@hopeful.future.ss.main.a?lang=en" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber-400 hover:text-[#0f172a] transition"><i class="uil uil-music-note"></i></a>
+            <a href="https://twitter.com/HopefulFutureSS" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber-400 hover:text-[#0f172a] transition"><i class="uil uil-twitter"></i></a>
+            <a href="https://www.facebook.com/HopefulFutureSS" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber-400 hover:text-[#0f172a] transition"><i class="uil uil-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/hopeful-future-ss" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-amber-400 hover:text-[#0f172a] transition"><i class="uil uil-linkedin-alt"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- Navbar (Sticky) -->
+<nav class="sticky top-0 z-50 bg-[#fef9e6] shadow-md border-b border-gray-200">
+    <div class="container mx-auto px-5 max-w-7xl flex justify-between items-center h-20">
+        <a href="../index.html" class="flex items-center gap-3">
+            <img src="../images/logo.jpeg" width="55" height="55" class="rounded-xl shadow-sm object-cover" alt="School Logo">
+            <div>
+                <h4 class="font-extrabold text-xl bg-gradient-to-r from-indigo-800 to-indigo-600 bg-clip-text text-transparent">HOPEFUL FUTURE SS</h4>
+                <small class="text-gray-500 text-xs">"Our Hope has Strong Wings"</small>
+            </div>
+        </a>
+        
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex items-center gap-6 font-medium">
+            <li><a href="../index.html" class="hover:text-indigo-700 transition">Home</a></li>
+            <li><a href="../pages/about.html" class="hover:text-indigo-700 transition">About HFS</a></li>
+            <li><a href="../pages/courses.html" class="hover:text-indigo-700 transition">Courses</a></li>
+            <li class="dropdown relative group">
+                <button class="flex items-center gap-1 hover:text-indigo-700">Explore <i class="uil uil-angle-down"></i></button>
+                <div class="dropdown-menu absolute top-full left-0 w-56 bg-white shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 border border-gray-100">
+                    <a href="../pages/documents.html" class="block px-5 py-2.5 hover:bg-indigo-50 transition">Fees, Rules & Calendar</a>
+                    <a href="../pages/students_leadership.html" class="block px-5 py-2.5 hover:bg-indigo-50 transition">Student Leadership</a>
+                    <a href="../pages/staff.html" class="block px-5 py-2.5 hover:bg-indigo-50 transition">Our Staff</a>
+                    <a href="../pages/gallery.html" class="block px-5 py-2.5 hover:bg-indigo-50 transition">Gallery</a>
+                </div>
+            </li>
+            <li class="dropdown relative group">
+                <button class="flex items-center gap-1 hover:text-indigo-700">eCampus <i class="uil uil-angle-down"></i></button>
+                <div class="dropdown-menu absolute top-full left-0 w-56 bg-white shadow-xl rounded-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
+                    <a href="../pages/e-library.html" class="block px-5 py-2.5 hover:bg-indigo-50 transition font-semibold text-indigo-700">e-Library</a>
+                    <a href="../pages/e-learning.html" class="block px-5 py-2.5 hover:bg-indigo-50 transition">e-Teaching</a>
+                </div>
+            </li>
+            <li><a href="../pages/contact.html" class="hover:text-indigo-700 transition">Contact</a></li>
+        </ul>
+        
+        <!-- Action Buttons Desktop -->
+        <div class="hidden md:flex items-center gap-3">
+            <a href="../pages/admissions.html" class="bg-amber-400 hover:bg-amber-500 text-gray-900 font-bold px-5 py-2 rounded-full transition shadow-md">Admissions</a>
+            <a href="../pages/e-learning.html" class="bg-indigo-700 hover:bg-indigo-800 text-white font-bold px-5 py-2 rounded-full transition shadow-md">eLearning</a>
+        </div>
+        
+        <!-- Mobile Menu Buttons -->
+        <button id="open-menu-btn" class="md:hidden text-3xl text-gray-700"><i class="uil uil-bars"></i></button>
+        <button id="close-menu-btn" class="md:hidden text-3xl text-gray-700 hidden"><i class="uil uil-multiply"></i></button>
+    </div>
+    
+    <!-- Mobile Menu Slider -->
+    <ul id="mobile-menu" class="fixed top-20 right-[-100%] w-72 h-[calc(100vh-5rem)] bg-[#fef9e6] shadow-2xl flex flex-col z-40 transition-all duration-300 ease-in-out px-6 py-6 gap-4 font-medium md:hidden overflow-y-auto">
+        <li><a href="../index.html" class="block py-2 border-b border-gray-200">Home</a></li>
+        <li><a href="../pages/about.html" class="block py-2 border-b border-gray-200">About HFS</a></li>
+        <li><a href="../pages/courses.html" class="block py-2 border-b border-gray-200">Courses</a></li>
+        <li class="dropdown-mobile">
+            <button class="dropbtn-mobile w-full text-left py-2 flex justify-between items-center">Explore <i class="uil uil-angle-down"></i></button>
+            <div class="mobile-dropdown-content hidden pl-4 flex flex-col gap-2 mt-1">
+                <a href="../pages/documents.html" class="py-1.5 text-gray-600">Fees, Rules & Calendar</a>
+                <a href="../pages/students_leadership.html" class="py-1.5 text-gray-600">Student Leadership</a>
+                <a href="../pages/staff.html" class="py-1.5 text-gray-600">Our Staff</a>
+                <a href="../pages/gallery.html" class="py-1.5 text-gray-600">Gallery</a>
+            </div>
+        </li>
+        <li class="dropdown-mobile">
+            <button class="dropbtn-mobile w-full text-left py-2 flex justify-between items-center">eCampus <i class="uil uil-angle-down"></i></button>
+            <div class="mobile-dropdown-content hidden pl-4 flex flex-col gap-2 mt-1">
+                <a href="../pages/e-library.html" class="py-1.5 text-gray-600">e-Library</a>
+                <a href="../pages/e-learning.html" class="py-1.5 text-gray-600 font-semibold text-indigo-700">e-Teaching</a>
+            </div>
+        </li>
+        <li><a href="../pages/contact.html" class="block py-2 border-b border-gray-200">Contact</a></li>
+        <div class="flex flex-col gap-3 mt-4">
+            <a href="../pages/admissions.html" class="bg-amber-400 text-center font-bold py-2 rounded-full">Admissions</a>
+            <a href="../pages/e-learning.html" class="bg-indigo-700 text-white text-center font-bold py-2 rounded-full">eLearning</a>
+        </div>
+    </ul>
+</nav>
+
+<!-- Hero Header -->
+<section class="relative bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-900 py-20 md:py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"%3E%3Cpolygon points="100,0 120,80 200,80 135,130 160,210 100,160 40,210 65,130 0,80 80,80" fill="white"/%3E%3C/svg%3E')] bg-repeat"></div>
+    <div class="absolute top-10 right-10 text-6xl opacity-5 animate-pulse">📚</div>
+    <div class="container mx-auto px-5 max-w-7xl text-center relative z-10">
+        <div class="inline-block bg-amber-400/20 backdrop-blur-sm rounded-full px-6 py-2 mb-6">
+            <span class="text-amber-300 font-semibold text-sm tracking-wide"><i class="uil uil-laptop text-base mr-1"></i> Digital Learning Hub</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-5 drop-shadow-lg">Hopeful Future Secondary School eLearning</h1>
+        <p class="text-indigo-100 text-lg md:text-xl max-w-2xl mx-auto">Access and download your academic notes, revisions, and reading assignments instantly.</p>
+        <div class="flex justify-center gap-3 mt-8">
+            <div class="w-16 h-1 bg-amber-400 rounded-full"></div>
+            <div class="w-8 h-1 bg-indigo-300 rounded-full"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Portal Content -->
+<div class="container mx-auto px-5 max-w-7xl py-12 md:py-16">
+    <div class="flex flex-col lg:flex-row gap-8">
+        
+        <!-- Sidebar - Search & Filters -->
+        <aside class="lg:w-80 flex-shrink-0">
+            <div class="bg-white rounded-2xl shadow-lg p-6 sticky top-28 border border-gray-100">
+                <!-- Search Box -->
+                <div class="relative mb-6">
+                    <i class="uil uil-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    <input type="text" id="searchInput" placeholder="Search resources..." 
+                           class="w-full pl-11 pr-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition bg-gray-50">
+                </div>
+                
+                <!-- Filter Section -->
+                <div>
+                    <h3 class="font-bold text-gray-800 mb-4 pb-2 border-b-2 border-amber-400 inline-block">Filter by Class</h3>
+                    <div class="space-y-2 mt-4">
+                        <button data-class="all" class="filter-btn w-full text-left px-4 py-2.5 rounded-xl transition font-medium bg-indigo-600 text-white">📚 All Classes</button>
+                        <button data-class="Senior 1" class="filter-btn w-full text-left px-4 py-2.5 rounded-xl transition font-medium text-gray-700 hover:bg-indigo-50">📖 Senior 1</button>
+                        <button data-class="Senior 2" class="filter-btn w-full text-left px-4 py-2.5 rounded-xl transition font-medium text-gray-700 hover:bg-indigo-50">📖 Senior 2</button>
+                        <button data-class="Senior 3" class="filter-btn w-full text-left px-4 py-2.5 rounded-xl transition font-medium text-gray-700 hover:bg-indigo-50">📖 Senior 3</button>
+                        <button data-class="Senior 4" class="filter-btn w-full text-left px-4 py-2.5 rounded-xl transition font-medium text-gray-700 hover:bg-indigo-50">📖 Senior 4</button>
+                        <button data-class="Senior 5" class="filter-btn w-full text-left px-4 py-2.5 rounded-xl transition font-medium text-gray-700 hover:bg-indigo-50">📖 Senior 5</button>
+                        <button data-class="Senior 6" class="filter-btn w-full text-left px-4 py-2.5 rounded-xl transition font-medium text-gray-700 hover:bg-indigo-50">📖 Senior 6</button>
+                    </div>
+                </div>
+                
+                <!-- Stats -->
+                <div class="mt-6 pt-6 border-t border-gray-100">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-gray-500">Total Resources:</span>
+                        <span id="totalCount" class="font-bold text-indigo-600">0</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Materials Grid -->
+        <main class="flex-1">
+            <div class="flex justify-between items-center mb-6 flex-wrap gap-3">
+                <h2 id="sectionTitle" class="text-2xl md:text-3xl font-bold text-gray-800">All Resources</h2>
+                <div class="flex items-center gap-2 text-sm text-gray-500">
+                    <i class="uil uil-cloud-download"></i>
+                    <span>Click download to save files</span>
+                </div>
+            </div>
+            
+            <div id="materialsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- JavaScript dynamically populates cards -->
+            </div>
+            
+            <!-- Loading / Empty State -->
+            <div id="emptyState" class="hidden text-center py-16 bg-white rounded-2xl shadow-sm">
+                <i class="uil uil-search-alt text-6xl text-gray-300 mb-4 block"></i>
+                <p class="text-gray-500">No resources found matching your criteria.</p>
+                <button onclick="resetFilters()" class="mt-4 text-indigo-600 font-semibold hover:underline">Clear filters</button>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-[#0f172a] text-gray-300 pt-14 pb-8 mt-8">
+    <div class="container mx-auto px-5 max-w-7xl grid md:grid-cols-4 gap-8">
+        <div>
+            <h3 class="text-white text-xl font-bold mb-4">About Hopeful Future Secondary School</h3>
+            <p class="text-sm leading-relaxed">Providing holistic education built on quality training, dedication, moral focus, and continuous academic achievement.</p>
+        </div>
+        <div>
+            <h3 class="text-white text-xl font-bold mb-4">Quick Access</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="../pages/about.html" class="hover:text-amber-400 transition">About HFS</a></li>
+                <li><a href="../pages/courses.html" class="hover:text-amber-400 transition">Academic Courses</a></li>
+                <li><a href="../pages/documents.html" class="hover:text-amber-400 transition">Fees & Documents</a></li>
+                <li><a href="../pages/admissions.html" class="hover:text-amber-400 transition">Admission Portal</a></li>
+                <li><a href="../pages/career.html" class="hover:text-amber-400 transition">Work With Us</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-white text-xl font-bold mb-4">eCampus Portals</h3>
+            <ul class="space-y-2 text-sm">
+                <li><a href="../pages/e-learning.html" class="hover:text-amber-400 transition">Live eLearning Matrix</a></li>
+                <li><a href="../pages/e-library.html" class="hover:text-amber-400 transition">Digital Library Archive</a></li>
+                <li><a href="../pages/academic-giants.html" class="hover:text-amber-400 transition">Wall of Fame</a></li>
+                <li><a href="../pages/anthem.html" class="hover:text-amber-400 transition">School Anthem</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-white text-xl font-bold mb-4">Location & Contact</h3>
+            <p>Ntooke, Kayunga District, Uganda</p>
+            <p class="mt-2 font-semibold">Call Info Line:</p>
+            <a href="tel:+256775831844" class="text-amber-400 hover:underline">+256-775-831844</a>
+            <p class="mt-3 font-semibold">Connect Socially:</p>
+            <div class="flex gap-4 mt-2">
+                <a href="#" class="text-xl hover:text-amber-400 transition"><i class="uil uil-music-note"></i></a>
+                <a href="#" class="text-xl hover:text-amber-400 transition"><i class="uil uil-twitter"></i></a>
+                <a href="#" class="text-xl hover:text-amber-400 transition"><i class="uil uil-facebook-f"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="text-center text-gray-500 text-xs pt-10 border-t border-gray-800 mt-8">
+        &copy; 2025 Hopeful Future Secondary School. All rights reserved. | "Our Hope Has Strong Wings"
+    </div>
+</footer>
+
+<!-- Dynamic Resources Script -->
+<script>
+    // Resource Database
+    const resourcesData = [
+//S1
+        { title: "Safety and First Aid Notes", subject: "Physical Education", classLevel: "Senior 1", file: "../documents/S1/Chapeter-2-Safety-and-First-Aid-PE-Notes.pdf", desc: "Physical education notes on safety and first aid." },
+        { title: "Introduction to Physical Education Notes", subject: "Physical Education", classLevel: "Senior 1", file: "../documents/S1/documents/S1/Chapter-1-Introduction-to-Physical-Education-Pe-Notes.pdf", desc: "An introduction to physical education." },
+        { title: "Body Conditioning-PE Notes", subject: "Physical Education", classLevel: "Senior 1", file: "../documents/S1/Chapter-3-Body-Conditioning-PE-Notes.pdf", desc: "Body conditioning notes for physical education." },
+        { title: "Movement concepts-PE Notes", subject: "Physical Education", classLevel: "Senior 1", file: "../documents/S1/Chapter-4-Movement-Concepts-PE-Notes.pdf", desc: "Movement concepts notes for physical education." },
+        { title: "Excercise, Rest and Hygiene_PE Notes", subject: "Physical Education", classLevel: "Senior 1", file: "../documents/S1/Chapter-5-Exercise-Rest-and-Hygiene-PE-Notes.pdf", desc: "Exercise, Rest, and Hygiene notes for physical education." },
+        { title: "Basic Running Skills-PE Notes", subject: "Physical Education", classLevel: "Senior 1", file: "../documents/S1/Chapter-6-Basic-Running-Skills-PE-Notes.pdf", desc: "Basic running skills notes for physical education." },
+        { title: "Basic Skills in Netball-PE Notes", subject: "Physical Education", classLevel: "Senior 1", file: "../documents/S1/Chapter-9-Basic-Skills-in-Netball-PE-Notes.pdf", desc: "Basic skills in rounders notes for physical education." },
+        { title: "Basic Skills in Volleyball-PE Notes", subject: "Physical Education", classLevel: "Senior 1", file: "../documents/S1/Chapter-8-Basic-Skills-in-Volleyball-PE-Notes.pdf", desc: "Basic skills in volleyball notes for physical education." },
+        { title: "Business Startup process-ENT Notes", subject: "Entrepreneurship", classLevel: "Senior 1", file: "../documents/S1/S.1-.Business-start-up-process-2.pptx", desc: "Introduction to business start-up processes." },
+        { title: "Cell Parts, Function  and Microscopy-BIO Notes", subject: "Biology", classLevel: "Senior 1", file: "../documents/S1/O-LEVEL-BIO-NOTES-COMPLETE.pdf", desc: "Detailed breakdown of cell parts, functions, and microscopy techniques." },
+
+//S3
+        { title: "Back Transport- BIO Notes", subject: "Biology", classLevel: "Senior 3", file: "../documents/S3/BCK-TRANSPORT-S.3-Repaired.doc", desc: "Detailed breakdown of cell parts, functions, and microscopy techniques." },
+        { title: "Cellular Respiration- BIO Notes", subject: "Biology", classLevel: "Senior 3", file: "../documents/S3/CELLULAR-RESPIRATION-2023.pptx", desc: "Detailed breakdown of cell parts, functions, and microscopy techniques." },
+        { title: "Excretion- BIO Notes", subject: "Biology", classLevel: "Senior 3", file: "../documents/S3/EXCRETION.docx", desc: "Detailed breakdown of cell parts, functions, and microscopy techniques." },
+        { title: "Gaseous Exchange- BIO Notes", subject: "Biology", classLevel: "Senior 3", file: "../documents/S3/GASEOUS-EXCHANGE-FOR-S.3-2023.pptx", desc: "Detailed breakdown of cell parts, functions, and microscopy techniques." },
+        { title: "Government Revenue and Taxation- ENT Notes", subject: "Entrepreneurship", classLevel: "Senior 3", file: "../documents/S3/GOVENMENT-REVENUE-AND-TAXATION.pptx", desc: "Government revenue and taxation notes for entrepreneurship." },
+        { title: "Soil Composition- BIO Notes", subject: "Biology", classLevel: "Senior 3", file: "../documents/S3/SOIL-2022.pptx", desc: "Soil composition" },
+        { title: "TAX Compliance- ENT Notes", subject: "Entreprenuership", classLevel: "Senior 3", file: "../documents/S3/TAX-COMPLIANCE-2 (1).pptx", desc: "Tax compliance notes for entrepreneurship." },
+        { title: "Pre Historic Rock- HIST Notes", subject: "History", classLevel: "Senior 3", file: "../documents/S3/PRE-HISTORIC-ROCK.pdf", desc: "Pre-historic rock notes for history." },
+
+//S4
+        { title: "Physics O-level Notes", subject: "Physics", classLevel: "Senior 4", file: "../documents/S4/all-OLEVEL-PHYSICS-jb-REVISED.pdf", desc: "O level Physics notes" },
+        { title: "Mathematics O-level Notes", subject: "Mathematics", classLevel: "Senior 4", file: "../documents/S4/Maths-text-book-Olevel_compressed.pdf", desc: "O level Mathematics notes" },
+        { title: "Chemistry O-level Notes", subject: "Chemistry", classLevel: "Senior 4", file: "../documents/S4/O_level_Chemistry__notes_edited_new_Repaired.pdf", desc: "O level Chemistry notes" },
+        { title: "Biology O-level Notes", subject: "Biology", classLevel: "Senior 4", file: "../documents/S4/O-LEVEL-BIO-NOTES-COMPLETE.pdf", desc: "O level Biology notes" },
+        { title: "Mathematics O-level Notes", subject: "Mathematics", classLevel: "Senior 4", file: "../documents/S4/OLEVEL-MATHEMATICS-NOTES1_compressed.pdf", desc: "O level Mathematics notes" },
+        { title: "Physics scenarios", subject: "Physics", classLevel: "Senior 4", file: "../documents/S4/physics-scenarios-2024.pdf", desc: "Scenario-based questions for physics." },
+        { title: "S4 Math Scenario-items", subject: "Mathematics", classLevel: "Senior 4", file: "../documents/S4/S.4-MATHS-SCENARIO-ITEMS-COLLOECTION-FROM-MATHS-CLINIC (1).pdf", desc: "Scenario-based questions for mathematics." },
+
+
+
+//S6
+        { title: "A Level Chemistry Notes", subject: "Chemistry", classLevel: "Senior 6", file: "../documents/S6/A-level-chemistry-practical-guide_084309.pdf", desc: "A-level chemistry notes" },
+        { title: "Applied Inorganic Chemistry", subject: "Chemistry", classLevel: "Senior 6", file: "../documents/S6/APPLIED-INORGANIC-CHEMISTRY.pdf", desc: "Balancing equations and learning core reaction types step-by-step." },
+        { title: "Organic Reactions A Level Chemistry", subject: "chemistry", classLevel: "Senior 6", file: "../documents/S6/ORGANIC-REACTIONS-A-LEVEL-CHEMISTRY-TEXT-BOOK-R.-L-MADAN.pdf", desc: "A-level inorganic chemistry" },
+
+
+        { title: "Programming class", subject: "ICT", classLevel: "ALL", file: "../documents/Testing Practice Question.pdf", desc: "How to test software Applications" },
+        { title: "ICT", subject: "ICT", classLevel: "ALL", file: "../documents/Types of Software Testing.pdf", desc: "Types of software testing" },
+        { title: "ICT", subject: "ICT", classLevel: "ALL", file: "../documents/Software Documentation in testing.pdf", desc: "Software documentation for testing purposes" },
+        { title: "ICT", subject: "ICT", classLevel: "ALL", file: "../documents/Testing Practice Question.pdf", desc: "Arrays, linked lists, sorting algorithms for A-Level computing." }
+    ];
+
+    let currentFilter = "all";
+    let currentSearch = "";
+
+    const grid = document.getElementById("materialsGrid");
+    const emptyState = document.getElementById("emptyState");
+    const sectionTitle = document.getElementById("sectionTitle");
+    const totalCountSpan = document.getElementById("totalCount");
+    const searchInput = document.getElementById("searchInput");
+
+    // Render cards
+    function renderCards() {
+        const filtered = resourcesData.filter(item => {
+            const matchesClass = currentFilter === "all" || item.classLevel === currentFilter;
+            const matchesSearch = item.title.toLowerCase().includes(currentSearch) || 
+                                  item.subject.toLowerCase().includes(currentSearch) ||
+                                  item.desc.toLowerCase().includes(currentSearch);
+            return matchesClass && matchesSearch;
+        });
+
+        totalCountSpan.textContent = filtered.length;
+
+        if (filtered.length === 0) {
+            grid.innerHTML = "";
+            emptyState.classList.remove("hidden");
+            return;
+        }
+        emptyState.classList.add("hidden");
+
+        grid.innerHTML = filtered.map(item => `
+            <div class="resource-card bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-all">
+                <div class="h-2 bg-gradient-to-r from-indigo-600 to-indigo-400"></div>
+                <div class="p-5">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-700">${item.subject}</span>
+                        <i class="uil uil-file-alt text-gray-400 text-lg"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-gray-800 mb-2">${item.title}</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">${item.desc}</p>
+                    <div class="flex items-center justify-between pt-3 border-t border-gray-100">
+                        <span class="text-xs text-gray-400 flex items-center gap-1"><i class="uil uil-book-open"></i> ${item.classLevel}</span>
+                        <a href="${item.file}" class="flex items-center gap-2 bg-amber-400 hover:bg-amber-500 text-gray-900 font-semibold px-3 py-1.5 rounded-lg transition text-sm shadow-sm" download>
+                            <i class="uil uil-download-alt"></i> Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `).join("");
+    }
+
+    // Filter handler
+    function setFilter(classLevel, btnElement) {
+        currentFilter = classLevel;
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('bg-indigo-600', 'text-white');
+            btn.classList.add('text-gray-700', 'hover:bg-indigo-50');
+        });
+        if (btnElement) {
+            btnElement.classList.remove('text-gray-700', 'hover:bg-indigo-50');
+            btnElement.classList.add('bg-indigo-600', 'text-white');
+        }
+        sectionTitle.textContent = currentFilter === "all" ? "All Resources" : `${currentFilter} Resources`;
+        renderCards();
+    }
+
+    // Reset filters
+    window.resetFilters = function() {
+        currentFilter = "all";
+        currentSearch = "";
+        searchInput.value = "";
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.remove('bg-indigo-600', 'text-white');
+            btn.classList.add('text-gray-700', 'hover:bg-indigo-50');
+        });
+        const allBtn = document.querySelector('[data-class="all"]');
+        if (allBtn) {
+            allBtn.classList.remove('text-gray-700', 'hover:bg-indigo-50');
+            allBtn.classList.add('bg-indigo-600', 'text-white');
+        }
+        sectionTitle.textContent = "All Resources";
+        renderCards();
+    };
+
+    // Search handler
+    if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+            currentSearch = e.target.value.toLowerCase();
+            renderCards();
+        });
+    }
+
+    // Attach filter event listeners
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener("click", () => {
+            const classVal = btn.getAttribute("data-class");
+            if (classVal) setFilter(classVal, btn);
+        });
+    });
+
+    // Initial render
+    renderCards();
+
+    // Mobile Menu Script
+    const openBtn = document.getElementById('open-menu-btn');
+    const closeBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if(openBtn && closeBtn && mobileMenu) {
+        openBtn.onclick = () => { 
+            mobileMenu.style.right = '0'; 
+            openBtn.style.display = 'none'; 
+            closeBtn.style.display = 'inline-block'; 
+        };
+        closeBtn.onclick = () => { 
+            mobileMenu.style.right = '-100%'; 
+            openBtn.style.display = 'inline-block'; 
+            closeBtn.style.display = 'none'; 
+        };
+    }
+    
+    // Mobile dropdown toggles
+    document.querySelectorAll('.dropdown-mobile button').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const content = btn.nextElementSibling;
+            if(content) content.classList.toggle('hidden');
+        });
+    });
+</script>
+</body>
+</html>
